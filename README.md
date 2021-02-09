@@ -1,9 +1,9 @@
 <p align="center">
 <a href="https://dscvit.com">
-	<img src="https://user-images.githubusercontent.com/30529572/92081025-fabe6f00-edb1-11ea-9169-4a8a61a5dd45.png" alt="DSC VIT"/>
+    <img src="https://user-images.githubusercontent.com/30529572/92081025-fabe6f00-edb1-11ea-9169-4a8a61a5dd45.png" alt="DSC VIT"/>
 </a>
-	<h2 align="center"> < Insert Project Title Here > </h2>
-	<h4 align="center"> < Insert Project Description Here > <h4>
+    <h2 align="center"> DigiNotes </h2>
+    <h4 align="center"> An application that will automatically detect the underlined sentences in a given page uploaded by the user. The parsed sentences will be stored in the application and can be referred to by the user when a hardcopy is not available  <h4>
 </p>
 
 ---
@@ -15,53 +15,30 @@
 
 
 ## Features
-- [ ]  < feature >
-- [ ]  < feature >
-- [ ]  < feature >
-- [ ]  < feature >
-
-<br>
-
-## Dependencies
- - < dependency >
- - < dependency >
-
-
-## Running
-
-
-< directions to install > 
-```bash
-< insert code >
-```
-
-< directions to execute >
-
-```bash
-< insert code >
-```
+- [ ]   Detecting underlined sentences
+- [ ]  If possible, detecting words circled by the user.
 
 ## Contributors
 
 <table>
-	<tr align="center">
-		<td>
-		John Doe
-		<p align="center">
-			<img src = "https://dscvit.com/images/dsc-logo-square.svg" width="150" height="150" alt="Your Name Here (Insert Your Image Link In Src">
-		</p>
-			<p align="center">
-				<a href = "https://github.com/person1">
-					<img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36" alt="GitHub"/>
-				</a>
-				<a href = "https://www.linkedin.com/in/person1">
-					<img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36" alt="LinkedIn"/>
-				</a>
-			</p>
-		</td>
-	</tr>
+    <tr align="center">
+        <td>
+        Chanakya Vivek Kapoor
+        <p align="center">
+            <img src = "https://avatars.githubusercontent.com/u/55597656" width="150" height="140" alt="Your Name Here (Insert Your Image Link In Src">
+        </p>
+            <p align="center">
+                <a href = "https://github.com/chanakya1310">
+                    <img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36" alt="GitHub"/>
+                </a>
+                <a href = "https://www.linkedin.com/in/chanakya-vivek-kapoor-a04496167">
+                    <img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36" alt="LinkedIn"/>
+                </a>
+            </p>
+        </td>
+    </tr>
 </table>
 
 <p align="center">
-	Made with :heart: by <a href="https://dscvit.com">DSC VIT</a>
+    Made with :heart: by <a href="https://dscvit.com">DSC VIT</a>
 </p>
