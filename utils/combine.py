@@ -1,9 +1,8 @@
 def combine(final_final):
     """
-    A function used to combine two sections of sentences if the difference of 
+    A function used to combine two sections of sentences if the difference of
     row numbers between them is 60
     """
-    
     final_f = []
     final_f.append(final_final[0])
 

@@ -1,12 +1,17 @@
-from utils.api import *
 import json
+
+from utils.api import *
+
 
 def AvgHeight(filename1):
     """
-    A function used to calculate the average height of sentences for better ROI extraction.
+    A function used to calculate the average height of sentences for
+    better ROI extraction.
     """
 
-    test_file = ocr_space_file(filename = filename1, overlay = True, language = 'eng')
+    test_file = ocr_space_file(
+        filename=filename1, overlay=True, language='eng'
+        )
     test_file = json.loads(test_file)
 
     message = test_file['ParsedResults'][0]['TextOverlay']['Lines']
@@ -15,4 +20,4 @@ def AvgHeight(filename1):
     for i in range(0, len(message)):
         heights.append(message[i]['MaxHeight'])
 
-    return int(sum(heights)/ len(heights))
+    return int(sum(heights) / len(heights))
