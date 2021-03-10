@@ -24,8 +24,6 @@ def ocr_space_file(
 
     with open(filename, "rb") as f:
         r = requests.post(
-            "https://api.ocr.space/parse/image",
-            files={filename: f},
-            data=payload,
+            "https://api.ocr.space/parse/image", files={filename: f}, data=payload,
         )
     return r.content.decode()
