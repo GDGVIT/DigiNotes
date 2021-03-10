@@ -4,9 +4,9 @@ import sys
 import cv2
 import numpy as np
 
-from utils.api import *
-from utils.AvgHeight import *
-from utils.combine import *
+from utils.api import ocr_space_file
+from utils.AvgHeight import AvgHeight
+from utils.combine import combine
 
 
 def underlined_sentences(img):

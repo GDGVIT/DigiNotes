@@ -1,6 +1,6 @@
 import json
 
-from utils.api import *
+from utils.api import ocr_space_file
 
 
 def AvgHeight(filename1):

@@ -7,7 +7,7 @@ import requests
 def ocr_space_file(
     filename,
     overlay=True,
-    api_key="0ed5bbfbd288957",
+    api_key="Enter your api key",
     language="eng",
     detectOrientation=True,
     scale=True,
