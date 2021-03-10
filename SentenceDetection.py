@@ -6,12 +6,12 @@ import numpy as np
 
 from utils.api import *
 from utils.AvgHeight import *
-from utils.combine2 import *
+from utils.combine import *
 
 
 def underlined_sentences(img):
     if img is None:
-        print('Error opening img: ' + img)
+        print("Error opening img: " + img)
 
     # Transform source img to gray if it is not already
     if len(img.shape) != 2:
@@ -23,14 +23,14 @@ def underlined_sentences(img):
     # Dilation followed by Erosion
     morphed = cv2.morphologyEx(gray, cv2.MORPH_CLOSE, kernel)
 
-    line_removed = cv2.add(gray, (255-morphed))  # Image without lines
+    line_removed = cv2.add(gray, (255 - morphed))  # Image without lines
 
     # Apply adaptiveThreshold at the bitwise_not of gray
     gray = cv2.bitwise_not(gray)
     # Binary Image
     bw = cv2.adaptiveThreshold(
         gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 15, -2
-        )
+    )
 
     # Create the image that will use to extract
     # the horizontal and vertical lines
@@ -45,7 +45,7 @@ def underlined_sentences(img):
     # lines through morphology operations
     horizontalStructure = cv2.getStructuringElement(
         cv2.MORPH_RECT, (horizontal_size, 1)
-        )
+    )
 
     # Apply morphology operations
     horizontal = cv2.erode(horizontal, horizontalStructure)
@@ -56,12 +56,10 @@ def underlined_sentences(img):
 
     contours, hierarchy = cv2.findContours(
         thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE
-        )  # Finding the Contours in the thresh image
+    )  # Finding the Contours in the thresh image
 
     morphed = 255 - horizontal
-    cv2.drawContours(
-        morphed, contours, -1, (0, 0, 0), 3
-        )  # draw all contours
+    cv2.drawContours(morphed, contours, -1, (0, 0, 0), 3)  # draw all contours
 
     img = morphed  # We will be dealing the morphed picture going ahead.
     count = 0
@@ -114,22 +112,25 @@ def underlined_sentences(img):
         if min_i == 0 or max_i == 0:
             continue
 
-        roi = line_removed[min_i - 40: max_i, 0: morphed.shape[1]]
-        cv2.imwrite('cropped_img1.jpeg', roi)
+        roi = line_removed[min_i - 40 : max_i, 0 : morphed.shape[1]]
+        cv2.imwrite("cropped_img1.jpeg", roi)
 
-        average_height = AvgHeight(filename1='cropped_img1.jpeg')
+        average_height = AvgHeight(filename1="cropped_img1.jpeg")
         # Used to calculate the average height of a sentences
         # for better ROI detection
 
-        roi_true = line_removed[
-            (min_i - average_height): max_i, 0: morphed.shape[1]
-            ]
-        cv2.imwrite('cropped_img2.jpeg', roi_true)
+        roi_true = line_removed[(min_i - average_height) : max_i, 0 : morphed.shape[1]]
+        cv2.imwrite("cropped_img2.jpeg", roi_true)
 
-        message = test_file['ParsedResults'][0]['ParsedText']
+        test_file = ocr_space_file(
+            filename="cropped_img2.jpeg", overlay=True, language="eng"
+        )
+
+        test_file = json.loads(test_file)
+        message = test_file["ParsedResults"][0]["ParsedText"]
 
         final_messages.append(message)
 
     print(final_messages)
 
-    return {'Sentences': final_messages}
+    return {"Sentences": final_messages}

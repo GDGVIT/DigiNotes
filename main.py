@@ -8,17 +8,16 @@ from PIL import Image
 
 from SentenceDetection import underlined_sentences
 
-
 app = FastAPI()
 
 
-@app.get('/test')
+@app.get("/test")
 async def testing():
     return "Hello World"
 
 
 @app.post("/predict/image")
-async def predict_api(file: UploadFile=File(...)):
+async def predict_api(file: UploadFile = File(...)):
 
     extension = file.filename.split(".")[-1] in ("jpg", "jpeg", "png", "JPG")
     if not extension:
@@ -30,6 +29,7 @@ async def predict_api(file: UploadFile=File(...)):
     sentences = underlined_sentences(img)
 
     return sentences
+
 
 if __name__ == "__main__":
     uvicorn.run(app, debug=True)
