@@ -5,7 +5,6 @@ import numpy as np
 import uvicorn
 from fastapi import FastAPI, File, UploadFile
 from PIL import Image
-
 from SentenceDetection import underlined_sentences
 
 app = FastAPI()
