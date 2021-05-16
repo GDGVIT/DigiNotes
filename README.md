@@ -10,13 +10,12 @@
 [![Join Us](https://img.shields.io/badge/Join%20Us-Developer%20Student%20Clubs-red)](https://dsc.community.dev/vellore-institute-of-technology/)
 [![Discord Chat](https://img.shields.io/discord/760928671698649098.svg)](https://discord.gg/498KVdSKWR)
 
-[![DOCS](https://img.shields.io/badge/Documentation-see%20docs-green?style=flat-square&logo=appveyor)](INSERT_LINK_FOR_DOCS_HERE) 
-  [![UI ](https://img.shields.io/badge/User%20Interface-Link%20to%20UI-orange?style=flat-square&logo=appveyor)](INSERT_UI_LINK_HERE)
+[![DOCS](https://img.shields.io/badge/Documentation-see%20docs-green?style=flat-square&logo=appveyor)](http://diginotes1310.herokuapp.com/docs) 
+  [![UI ](https://img.shields.io/badge/User%20Interface-Link%20to%20UI-orange?style=flat-square&logo=appveyor)](https://www.figma.com/file/dPZkVN1BbzSF7rMn0x0WSf/DigiNotes?node-id=0%3A1)
 
 
 ## Features
-- [ ]   Detecting underlined sentences
-- [ ]  If possible, detecting words circled by the user.
+- [X]   Detecting underlined sentences
 
 ## Contributors
 
