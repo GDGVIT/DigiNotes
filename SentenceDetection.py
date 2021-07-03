@@ -95,8 +95,12 @@ def underlined_sentences(img):
         if i == len(jss) - 2:
             sections.append(each_section)
 
+    if len(sections) == 0:
+        return []
     final_sections = []
 
+    if len(final_sections) == 0:
+        return []
     for i in sections:
         if len(i) > 35:
             final_sections.append(i)
@@ -118,7 +122,9 @@ def underlined_sentences(img):
         # Used to calculate the average height of a sentences
         # for better ROI detection
 
-        roi_true = line_removed[(min_i - average_height) : max_i, 0 : morphed.shape[1]]
+        roi_true = line_removed[
+            (min_i - average_height) : (max_i + average_height), 0 : morphed.shape[1]
+        ]
         cv2.imwrite("cropped_img2.jpeg", roi_true)
 
         test_file = ocr_space_file(
